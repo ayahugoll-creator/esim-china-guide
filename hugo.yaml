@@ -29,9 +29,12 @@ menu:
     - name: "Reviews"
       url: "/tags/reviews/"
       weight: 2
+    - name: "Visa Check"
+      url: "/countries/"
+      weight: 3
     - name: "Guides"
       url: "/tags/guides/"
-      weight: 3
+      weight: 4
     - name: "About"
       url: "/about/"
       weight: 4

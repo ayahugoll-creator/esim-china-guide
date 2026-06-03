@@ -1,0 +1,78 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Params.flag }} {{ .Title }} → China: Entry Requirements {{ now.Format "2006" }}</h1>
+    <div class="post-description">
+      {{ if eq .Params.status "visa-free" }}
+        ✅ Citizens of {{ .Title }} can enter China <strong>visa-free for up to 30 days</strong>.
+      {{ else if eq .Params.status "transit" }}
+        🔵 Citizens of {{ .Title }} can use the <strong>240-hour (10-day) transit visa-free</strong> policy.
+      {{ else }}
+        🔴 Citizens of {{ .Title }} <strong>need a visa</strong> to enter China.
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="post-content">
+    <!-- Status Banner -->
+    {{ if eq .Params.status "visa-free" }}
+    <div style="background:#dcfce7;border:1px solid #86efac;padding:18px 22px;border-radius:12px;margin-bottom:24px;">
+      <strong style="font-size:18px;color:#166534;">🟢 Visa-Free — 30 Days</strong>
+      <p style="margin:8px 0 0 0;color:#166534;">{{ .Params.policy_summary }}</p>
+    </div>
+    {{ else if eq .Params.status "transit" }}
+    <div style="background:#dbeafe;border:1px solid #93c5fd;padding:18px 22px;border-radius:12px;margin-bottom:24px;">
+      <strong style="font-size:18px;color:#1e40af;">🔵 240-Hour (10-Day) Transit Visa-Free</strong>
+      <p style="margin:8px 0 0 0;color:#1e40af;">{{ .Params.policy_summary }}</p>
+    </div>
+    {{ else }}
+    <div style="background:#fee2e2;border:1px solid #fca5a5;padding:18px 22px;border-radius:12px;margin-bottom:24px;">
+      <strong style="font-size:18px;color:#991b1b;">🔴 Visa Required</strong>
+      <p style="margin:8px 0 0 0;color:#991b1b;">{{ .Params.policy_summary }}</p>
+    </div>
+    {{ end }}
+
+    <!-- Key Details -->
+    {{ if .Params.requirements }}
+    <h2>📋 Requirements</h2>
+    <ul>
+      {{ range .Params.requirements }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ if .Params.transit_ports }}
+    <h2>🚢 Transit Entry Ports</h2>
+    <ul>
+      {{ range .Params.transit_ports }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    <!-- eSIM CTA -->
+    <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:24px 28px;border-radius:14px;margin-top:28px;">
+      <h2 style="color:#fff;margin-top:0;">📱 Ready to fly? Get your China eSIM</h2>
+      <p style="opacity:.9;">Install before departure. Works behind the Great Firewall. Google, WhatsApp, Instagram — all accessible.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <a href="/posts/best-esim-for-china-travel/" style="background:#fff;color:#667eea;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;">Compare Best eSIMs →</a>
+        <a href="/posts/alipay-foreigner-setup-guide/" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;">Set Up Alipay →</a>
+      </div>
+    </div>
+
+    <!-- Source & Update -->
+    <p style="margin-top:32px;padding:14px 18px;background:#f3f4f6;border-radius:8px;font-size:13px;color:#6b7280;">
+      {{ if .Params.source_url }}
+        📌 Source: <a href="{{ .Params.source_url }}">{{ .Params.source_label }}</a> ·
+      {{ end }}
+      Last verified: <strong>{{ .Params.last_verified }}</strong> ·
+      Page updated: {{ .Date.Format "2006-01-02" }}
+    </p>
+
+    <p style="font-size:13px;color:#9ca3af;margin-top:8px;">
+      ⚠️ This is not legal advice. Visa policies change. Always confirm with your local Chinese embassy before booking.
+    </p>
+  </div>
+</article>
+{{ end }}

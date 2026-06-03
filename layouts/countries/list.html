@@ -1,0 +1,68 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">China Entry Requirements by Country</h1>
+    <div class="post-description">
+      Check if you can enter China visa-free, and get the right eSIM before you fly.
+    </div>
+  </header>
+
+  <div class="post-content">
+    <!-- Search -->
+    <input type="text" id="countrySearch" placeholder="Search your country (e.g. Australia, UK, India)..."
+      style="width:100%;padding:14px 18px;font-size:16px;border:2px solid #e5e7eb;border-radius:12px;margin-bottom:28px;outline:none;"
+      autofocus>
+
+    <!-- Legend -->
+    <div style="display:flex;gap:24px;margin-bottom:24px;flex-wrap:wrap;font-size:14px;">
+      <span>🟢 Visa-Free (30 days)</span>
+      <span>🔵 240h Transit</span>
+      <span>🔴 Visa Required</span>
+      <span style="margin-left:auto;color:#6b7280;">Updated: {{ now.Format "2006-01-02" }}</span>
+    </div>
+
+    <!-- Country list -->
+    <div id="countryList">
+      {{ range .Pages.ByTitle }}
+      <div class="country-row" data-name="{{ .Title | lower }}" data-status="{{ .Params.status }}"
+        style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;margin-bottom:8px;border:1px solid #e5e7eb;border-radius:10px;transition:background .15s;">
+        <div>
+          <strong style="font-size:16px;">{{ .Params.flag }} {{ .Title }}</strong>
+          <span style="margin-left:10px;font-size:13px;color:#6b7280;">{{ .Params.region }}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          {{ if eq .Params.status "visa-free" }}
+            <span style="background:#dcfce7;color:#166534;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600;">🟢 Visa-Free</span>
+          {{ else if eq .Params.status "transit" }}
+            <span style="background:#dbeafe;color:#1e40af;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600;">🔵 240h Transit</span>
+          {{ else }}
+            <span style="background:#fee2e2;color:#991b1b;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600;">🔴 Visa Required</span>
+          {{ end }}
+          <a href="{{ .RelPermalink }}" style="color:#2563eb;font-size:14px;text-decoration:none;">Details →</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <p style="margin-top:24px;padding:16px;background:#f0f9ff;border-radius:10px;font-size:14px;color:#1e40af;">
+      ⚠️ <strong>Disclaimer:</strong> Visa policies change frequently. We update this page regularly but always verify with your local Chinese embassy or consulate before traveling.
+    </p>
+  </div>
+</article>
+
+<script>
+document.getElementById('countrySearch').addEventListener('input', function(e) {
+  var q = e.target.value.toLowerCase();
+  document.querySelectorAll('.country-row').forEach(function(row) {
+    var name = row.getAttribute('data-name');
+    row.style.display = (name.indexOf(q) !== -1) ? 'flex' : 'none';
+  });
+});
+</script>
+<style>
+.country-row:hover { background: #f9fafb; }
+@media (max-width: 640px) {
+  .country-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+</style>
+{{ end }}
