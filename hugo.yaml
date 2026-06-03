@@ -1,0 +1,48 @@
+baseURL: "https://esimchina.trade/"
+locale: "en-us"
+title: "eSIM China Guide — Honest Reviews for Foreign Travelers"
+theme: "PaperMod"
+
+params:
+  author: "eSIM China Guide"
+  description: "Independent, honest eSIM reviews for travelers visiting China. Which eSIM actually works behind the Great Firewall? We test them all."
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  keywords:
+    - "eSIM China"
+    - "China eSIM"
+    - "best eSIM for China"
+    - "Airalo China"
+    - "Holafly China"
+    - "Great Firewall bypass"
+
+menu:
+  main:
+    - name: "Best eSIMs"
+      url: "/posts/best-esim-for-china-travel/"
+      weight: 1
+    - name: "Reviews"
+      url: "/tags/reviews/"
+      weight: 2
+    - name: "Guides"
+      url: "/tags/guides/"
+      weight: 3
+    - name: "About"
+      url: "/about/"
+      weight: 4
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
