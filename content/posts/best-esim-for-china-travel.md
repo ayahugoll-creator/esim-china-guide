@@ -53,7 +53,7 @@ Not all "China eSIMs" do both. We bought and tested 6 of them. Here's what works
 
 **The catch:** No phone number included (data-only, like all international eSIMs).
 
-**[Check Saily prices →](https://saily.com/affiliate?utm_source=esimchina)**
+**[Check Saily prices →](https://saily.tpo.lv/Hpfpc3b9)**
 
 ---
 
@@ -90,8 +90,9 @@ Not all "China eSIMs" do both. We bought and tested 6 of them. Here's what works
 
 ---
 
-### The Others: Ubigi, Nomad, Trip.com eSIM
+### The Others: Ubigi, Nomad, Trip.com eSIM, Yesim
 
+- **Yesim:** Built-in VPN for iOS users. Good for Apple-only travelers who don't want to mess with separate VPN apps. [Check Yesim →](https://yesim.tpo.lv/VpCMap0f)
 - **Ubigi:** Most stable connection (China Telecom partnership), but mostly 4G, only ~30% 5G. Email-only support.
 - **Nomad:** Flexible Asia plans. No built-in firewall bypass — same VPN issue as Airalo. Average speeds.
 - **Trip.com eSIM:** Good value with VPN-like routing, rated 4.6/5 with thousands of reviews. Billing by usage hours, not calendar days (nice for early morning arrivals).
