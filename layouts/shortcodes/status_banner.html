@@ -1,0 +1,17 @@
+{{ $status := .Page.Params.status }}
+{{ if eq $status "visa-free" }}
+<div style="background:#dcfce7;border:1px solid #86efac;padding:18px 22px;border-radius:12px;margin-bottom:24px;">
+  <strong style="font-size:18px;color:#166534;">🟢 Visa-Free — 30 Days</strong>
+  <p style="margin:8px 0 0 0;color:#166534;">{{ .Page.Params.policy_summary }}</p>
+</div>
+{{ else if eq $status "transit" }}
+<div style="background:#dbeafe;border:1px solid #93c5fd;padding:18px 22px;border-radius:12px;margin-bottom:24px;">
+  <strong style="font-size:18px;color:#1e40af;">🔵 240-Hour (10-Day) Transit Visa-Free</strong>
+  <p style="margin:8px 0 0 0;color:#1e40af;">{{ .Page.Params.policy_summary }}</p>
+</div>
+{{ else }}
+<div style="background:#fee2e2;border:1px solid #fca5a5;padding:18px 22px;border-radius:12px;margin-bottom:24px;">
+  <strong style="font-size:18px;color:#991b1b;">🔴 Visa Required</strong>
+  <p style="margin:8px 0 0 0;color:#991b1b;">{{ .Page.Params.policy_summary }}</p>
+</div>
+{{ end }}
