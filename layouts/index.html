@@ -1,7 +1,8 @@
 {{ define "main" }}
 <div class="map-hero">
-  <h1 class="map-title">China Entry Requirements — <span class="map-title-accent">Select Your Country</span></h1>
-  <p class="map-subtitle">88 countries · Visa-free, transit & visa-required · Updated June 2026</p>
+  <p class="map-hero-tagline">Planning a trip to China?</p>
+  <h1 class="map-title">Check your visa, get connected, <span class="map-title-accent">arrive ready.</span></h1>
+  <p class="map-subtitle">88 countries · Honest eSIM reviews · 100% free · Updated June 2026</p>
 
   <div class="map-search">
     <input type="text" id="mapSearch" placeholder="🔍  Type your country name..." autofocus>
@@ -9,7 +10,7 @@
   </div>
 
   <div class="map-container">
-    <svg viewBox="0 0 1000 500" class="world-map" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1000 500" class="world-map" xmlns="http://www.w3.org/2000/svg" style="max-height:380px;">
       <defs>
         <filter id="glow">
           <feGaussianBlur stdDeviation="3" result="blur"/>
@@ -235,6 +236,15 @@ function getFlag(name) {
   padding: 20px 24px 40px;
 }
 
+.map-hero-tagline {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
 .map-title {
   text-align: center;
   font-size: 2rem;
@@ -333,10 +343,10 @@ function getFlag(name) {
   --map-china-label: #e8785a;
 }
 [data-theme="dark"] {
-  --map-ocean: #1e293b;
-  --map-land: #334155;
-  --map-land-stroke: #475569;
-  --map-label: #94a3b8;
+  --map-ocean: #0f172a;
+  --map-land: #475569;
+  --map-land-stroke: #64748b;
+  --map-label: #cbd5e1;
   --map-china-label: #fb923c;
 }
 
