@@ -7,7 +7,7 @@ flag: "🇦🇺"
 region: "Oceania"
 policy_summary: "Australian citizens can enter China without a visa for up to 30 days for tourism, business, or family visits. Part of China's unilateral visa-free policy, valid until December 31, 2026."
 last_verified: "2026-06-03"
-source_url: "https://en.nia.gov.cn/"
+source_url: "https://www.nia.gov.cn/"
 source_label: "NIA China"
 requirements:
   - "Passport valid for at least 3 months from date of entry"

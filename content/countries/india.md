@@ -7,7 +7,7 @@ flag: "🇮🇳"
 region: "Asia"
 policy_summary: "Indian citizens currently NEED a visa to enter China. India is not on China's visa-free list or the 240-hour transit program for Indian passport holders. A tourist (L) visa is required."
 last_verified: "2026-06-03"
-source_url: "https://en.nia.gov.cn/"
+source_url: "https://www.nia.gov.cn/"
 source_label: "NIA China"
 requirements:
   - "Valid passport with at least 6 months validity and 2 blank pages"

@@ -208,7 +208,7 @@ flag: "{flag}"
 region: "{region}"
 policy_summary: "{policy}"
 last_verified: "2026-06-04"
-source_url: "https://en.nia.gov.cn/"
+source_url: "https://www.nia.gov.cn/"
 source_label: "NIA China"
 requirements:
   - "Passport valid for at least 3 months from date of entry"
@@ -229,7 +229,7 @@ requirements:
 2. **Alipay setup:** Takes 10 minutes at home. Link your bank card before you fly. [Alipay setup guide →](/posts/alipay-foreigner-setup-guide/)
 3. **Do you need a Chinese phone number?** Probably not. [Read our guide →](/posts/chinese-phone-number-foreigner/)
 
-📌 **Source:** [NIA China](https://en.nia.gov.cn/) · Last verified: **2026-06-04**
+📌 **Source:** [NIA China](https://www.nia.gov.cn/) · Last verified: **2026-06-04**
 
 ⚠️ This is not legal advice. Visa policies change. Always confirm with your local Chinese embassy before booking.
 """
@@ -243,7 +243,7 @@ flag: "{flag}"
 region: "{region}"
 policy_summary: "{policy}"
 last_verified: "2026-06-04"
-source_url: "https://en.nia.gov.cn/"
+source_url: "https://www.nia.gov.cn/"
 source_label: "NIA China"
 requirements:
   - "Passport valid for at least 3 months"
@@ -273,7 +273,7 @@ transit_ports:
 2. **Alipay setup:** Link your bank card before you fly. [Alipay setup guide →](/posts/alipay-foreigner-setup-guide/)
 3. **Do you need a Chinese phone number?** [Read our guide →](/posts/chinese-phone-number-foreigner/)
 
-📌 **Source:** [NIA China](https://en.nia.gov.cn/) · Last verified: **2026-06-04**
+📌 **Source:** [NIA China](https://www.nia.gov.cn/) · Last verified: **2026-06-04**
 
 ⚠️ This is not legal advice. Visa policies change. Always confirm with your local Chinese embassy before booking.
 """
@@ -287,7 +287,7 @@ flag: "{flag}"
 region: "{region}"
 policy_summary: "{policy}"
 last_verified: "2026-06-04"
-source_url: "https://en.nia.gov.cn/"
+source_url: "https://www.nia.gov.cn/"
 source_label: "NIA China"
 requirements:
   - "Valid passport with at least 6 months validity and 2 blank pages"
@@ -317,7 +317,7 @@ Prepare everything else while your visa processes:
 2. **Alipay:** [Setup guide →](/posts/alipay-foreigner-setup-guide/) — link your bank card.
 3. **Cash backup:** Carry some RMB or USD as emergency backup.
 
-📌 **Source:** [NIA China](https://en.nia.gov.cn/) · Last verified: **2026-06-04**
+📌 **Source:** [NIA China](https://www.nia.gov.cn/) · Last verified: **2026-06-04**
 
 ⚠️ This is not legal advice. Visa policies change. Always confirm with your local Chinese embassy before booking.
 """

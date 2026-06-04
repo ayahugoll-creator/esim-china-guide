@@ -7,7 +7,7 @@ flag: "🇬🇧"
 region: "Europe"
 policy_summary: "UK citizens can enter China without a visa for up to 30 days. Added to the unilateral visa-free list on February 17, 2026. Valid until December 31, 2026."
 last_verified: "2026-06-03"
-source_url: "https://en.nia.gov.cn/"
+source_url: "https://www.nia.gov.cn/"
 source_label: "NIA China"
 requirements:
   - "Passport valid for at least 3 months from date of entry"

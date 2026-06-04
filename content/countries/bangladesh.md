@@ -7,7 +7,7 @@ flag: "🇧🇩"
 region: "Asia"
 policy_summary: "Bangladeshi citizens currently need a visa to enter China. Not included in any visa-free program."
 last_verified: "2026-06-04"
-source_url: "https://en.nia.gov.cn/"
+source_url: "https://www.nia.gov.cn/"
 source_label: "NIA China"
 requirements:
   - "Valid passport with at least 6 months validity and 2 blank pages"
@@ -37,6 +37,6 @@ Prepare everything else while your visa processes:
 2. **Alipay:** [Setup guide →](/posts/alipay-foreigner-setup-guide/) — link your bank card.
 3. **Cash backup:** Carry some RMB or USD as emergency backup.
 
-📌 **Source:** [NIA China](https://en.nia.gov.cn/) · Last verified: **2026-06-04**
+📌 **Source:** [NIA China](https://www.nia.gov.cn/) · Last verified: **2026-06-04**
 
 ⚠️ This is not legal advice. Visa policies change. Always confirm with your local Chinese embassy before booking.

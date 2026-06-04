@@ -7,7 +7,7 @@ flag: "🇺🇸"
 region: "Americas"
 policy_summary: "US citizens are NOT eligible for China's 30-day visa-free policy. However, they CAN use the 240-hour (10-day) transit visa-free program if passing through China to a third country."
 last_verified: "2026-06-03"
-source_url: "https://en.nia.gov.cn/"
+source_url: "https://www.nia.gov.cn/"
 source_label: "NIA China"
 requirements:
   - "Passport valid for at least 3 months"
