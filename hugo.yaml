@@ -12,6 +12,16 @@ params:
   ShowPostNavLinks: true
   defaultTheme: auto
   disableThemeToggle: false
+  ShowToc: true
+  ShowCodeCopyButtons: true
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+  label:
+    text: "📱 eSIM China Guide"
+    icon: ""
+    iconHeight: 0
 
   keywords:
     - "eSIM China"

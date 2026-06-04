@@ -1,0 +1,481 @@
+/* ============================================
+   eSIM China Guide — Warm & Friendly Theme
+   ============================================ */
+
+/* ── Color Palette ── */
+:root {
+    --gap: 24px;
+    --content-gap: 20px;
+    --nav-width: 1024px;
+    --main-width: 740px;
+    --header-height: 64px;
+    --footer-height: 80px;
+    --radius: 14px;
+
+    /* Warm light theme */
+    --theme: #fdf6f0;
+    --entry: #ffffff;
+    --primary: #2d2320;
+    --secondary: #7c6f6a;
+    --tertiary: #e8ddd4;
+    --content: #2d2320;
+    --code-block-bg: #2d2320;
+    --code-bg: #f5efe8;
+    --border: #e8ddd4;
+
+    /* Accent */
+    --accent: #e8785a;
+    --accent-soft: #fdf0eb;
+    --accent-dark: #c0583a;
+    --green: #5a9e6f;
+    --green-soft: #edf7f0;
+    --blue: #5a7fcf;
+    --blue-soft: #edf2fb;
+    --yellow: #e8b85a;
+    --yellow-soft: #fef9ee;
+
+    color-scheme: light;
+}
+
+/* ── Dark Mode ── */
+:root[data-theme="dark"] {
+    --theme: #1a1817;
+    --entry: #272422;
+    --primary: #e8ddd4;
+    --secondary: #a89890;
+    --tertiary: #3d3530;
+    --content: #e0d6ce;
+    --code-block-bg: #1a1817;
+    --code-bg: #2d2825;
+    --border: #3d3530;
+
+    --accent-soft: #3d2018;
+    --green-soft: #1a2d1f;
+    --blue-soft: #1a2235;
+    --yellow-soft: #352d18;
+}
+
+/* ── Base ── */
+html {
+    font-size: 17px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+    line-height: 1.75;
+    background: var(--theme);
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header / Navigation ── */
+.nav {
+    background: rgba(255,255,255,0.7);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+[data-theme="dark"] .nav {
+    background: rgba(26,24,23,0.8);
+}
+
+.nav a, .nav .logo a {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+.logo a {
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+}
+
+.logo a::before {
+    content: "📱 ";
+}
+
+/* ── Post Entry Cards (homepage listing) ── */
+.post-entry {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.post-entry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.post-entry .entry-header h2 {
+    font-size: 1.3rem;
+    margin: 0 0 8px;
+}
+
+.post-entry .entry-header h2 a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.post-entry .entry-header h2 a:hover {
+    color: var(--accent);
+}
+
+.entry-content {
+    color: var(--secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.entry-footer {
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
+/* ── Single Post ── */
+.post-header {
+    margin-bottom: 32px;
+}
+
+.post-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+[data-theme="dark"] .post-title {
+    color: #f0e8e0;
+}
+
+.post-description {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+.post-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.post-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-soft);
+    color: var(--primary);
+}
+
+.post-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 28px;
+    margin-bottom: 10px;
+}
+
+.post-content p {
+    margin-bottom: 18px;
+}
+
+/* ── Links inside content ── */
+.post-content a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-soft);
+    text-underline-offset: 3px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.post-content a:hover {
+    color: var(--accent-dark);
+    text-decoration-color: var(--accent);
+}
+
+/* ── Tables ── */
+.post-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 24px 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.post-content th {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.post-content td {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    background: var(--entry);
+}
+
+.post-content tr:first-child td {
+    border-top: none;
+}
+
+/* ── Inline Code ── */
+.post-content code {
+    background: var(--code-bg);
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-size: 0.88em;
+    color: var(--accent-dark);
+    border: 1px solid var(--border);
+}
+
+/* ── Blockquote ── */
+.post-content blockquote {
+    border-left: 4px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 16px 22px;
+    margin: 24px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.post-content blockquote p {
+    margin: 0;
+    color: var(--accent-dark);
+    font-style: italic;
+}
+
+/* ── Lists ── */
+.post-content ul, .post-content ol {
+    padding-left: 24px;
+    margin-bottom: 20px;
+}
+
+.post-content li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+.post-content li::marker {
+    color: var(--accent);
+}
+
+/* ── Horizontal Rule ── */
+.post-content hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 36px 0;
+}
+
+/* ── CTA Buttons (in-content links that look like buttons) ── */
+.post-content a[href*="airalo"],
+.post-content a[href*="saily"],
+.post-content a[href*="yesim"],
+.post-content a[href*="holafly"],
+.post-content a[href*="klook"] {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.15s;
+    margin: 4px 0;
+}
+
+.post-content a[href*="airalo"]:hover,
+.post-content a[href*="saily"]:hover,
+.post-content a[href*="yesim"]:hover,
+.post-content a[href*="holafly"]:hover,
+.post-content a[href*="klook"]:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+/* ── Breadcrumbs ── */
+.breadcrumbs {
+    font-size: 0.88rem;
+    color: var(--secondary);
+    margin-bottom: 16px;
+}
+
+.breadcrumbs a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent);
+}
+
+/* ── Tags / Pills ── */
+.post-tags a, .post-meta .post-tags a {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    padding: 4px 13px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.post-tags a:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ── Share Buttons ── */
+.share-buttons {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.share-buttons a {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.share-buttons a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ── Footer ── */
+footer {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--secondary);
+    font-size: 0.88rem;
+    border-top: 1px solid var(--border);
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* ── Pagination ── */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 32px 0;
+}
+
+.pagination a {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.pagination a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ── Top Link (back to top button) ── */
+.top-link {
+    background: var(--accent) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 12px rgba(232,120,90,0.3);
+}
+
+/* ── Scrollbar (WebKit) ── */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--theme);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--tertiary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+/* ── Images ── */
+.post-content img {
+    max-width: 100%;
+    border-radius: var(--radius);
+    margin: 20px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* ── Callout boxes ── */
+.post-content div[style*="background"] {
+    border-radius: var(--radius);
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+    .post-title {
+        font-size: 1.5rem;
+    }
+
+    .post-entry {
+        padding: 20px 18px;
+    }
+
+    .post-content {
+        font-size: 1rem;
+    }
+
+    :root {
+        --main-width: 100%;
+        --gap: 16px;
+    }
+}
+
+/* ── Highlight selected text ── */
+::selection {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+}
+
+/* ── Focus ring ── */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
