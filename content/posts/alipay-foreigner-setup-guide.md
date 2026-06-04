@@ -72,4 +72,6 @@ Ask a Chinese friend to send you 1 yuan, or try scanning a QR code online. Make 
 
 ---
 
-*We also have guides on the [best eSIMs for China](/posts/best-esim-for-china-travel/) and [whether you need a Chinese phone number](/posts/chinese-phone-number-foreigner/).*
+**Before you fly:** [Compare China eSIMs →](https://airalo.tpo.lv/k3vUkRq2) — get connected before you land.
+
+**Next read:** [Do you need a Chinese phone number?](/posts/chinese-phone-number-foreigner/)

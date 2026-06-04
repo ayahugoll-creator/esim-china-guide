@@ -53,7 +53,7 @@ Not all "China eSIMs" do both. We bought and tested 6 of them. Here's what works
 
 **The catch:** No phone number included (data-only, like all international eSIMs).
 
-**[Check Saily prices →](AFFILIATE_LINK_SAILY)**
+**[Check Saily prices →](https://saily.com/affiliate?utm_source=esimchina)**
 
 ---
 
@@ -69,7 +69,7 @@ Not all "China eSIMs" do both. We bought and tested 6 of them. Here's what works
 
 **The catch:** Without a VPN, this is useless for anything blocked. Budget travelers who know how to use a VPN will be fine.
 
-**[Check Airalo prices →](AFFILIATE_LINK_AIRALO)**
+**[Check Airalo prices →](https://airalo.tpo.lv/k3vUkRq2)**
 
 ---
 
@@ -86,7 +86,7 @@ Not all "China eSIMs" do both. We bought and tested 6 of them. Here's what works
 
 **The catch:** Hotspot capped at 1GB/day. If you're traveling with a laptop or multiple devices, this is limiting.
 
-**[Check Holafly prices →](AFFILIATE_LINK_HOLAFLY)**
+**[Check Holafly prices →](https://esim.holafly.com/affiliate?utm_source=esimchina)**
 
 ---
 
