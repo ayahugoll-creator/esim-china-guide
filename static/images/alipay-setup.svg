@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f0f9ff" rx="16"/>
+  <!-- Phone with Alipay -->
+  <rect x="280" y="50" width="120" height="260" rx="16" fill="#1e293b"/>
+  <rect x="295" y="70" width="90" height="220" rx="8" fill="#fff"/>
+  <rect x="310" y="90" width="60" height="60" rx="12" fill="#1677ff"/>
+  <text x="340" y="128" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#fff">支</text>
+  <rect x="310" y="165" width="60" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="310" y="185" width="60" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="310" y="205" width="45" height="8" rx="4" fill="#e2e8f0"/>
+  <!-- Steps -->
+  <text x="70" y="80" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#0369a1">Set Up Alipay in 4 Steps</text>
+  <circle cx="80" cy="130" r="16" fill="#1677ff"/>
+  <text x="80" y="136" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#fff" font-weight="bold">1</text>
+  <text x="110" y="136" font-family="system-ui,sans-serif" font-size="16" fill="#1e293b">Download Alipay app</text>
+  <circle cx="80" cy="185" r="16" fill="#1677ff"/>
+  <text x="80" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#fff" font-weight="bold">2</text>
+  <text x="110" y="191" font-family="system-ui,sans-serif" font-size="16" fill="#1e293b">Register with foreign number</text>
+  <circle cx="80" cy="240" r="16" fill="#1677ff"/>
+  <text x="80" y="246" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#fff" font-weight="bold">3</text>
+  <text x="110" y="246" font-family="system-ui,sans-serif" font-size="16" fill="#1e293b">Upload passport for verification</text>
+  <circle cx="80" cy="295" r="16" fill="#1677ff"/>
+  <text x="80" y="301" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#fff" font-weight="bold">4</text>
+  <text x="110" y="301" font-family="system-ui,sans-serif" font-size="16" fill="#1e293b">Link Visa/Mastercard</text>
+  <text x="70" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">Takes 10 minutes. Do it before you fly.</text>
+</svg>

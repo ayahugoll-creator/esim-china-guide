@@ -5,7 +5,10 @@ draft: false
 tags: ["guides", "navigation", "apps"]
 description: "Google Maps is useless in China. Here are the 4 map apps that actually work for foreign tourists, and which one is best for iPhone vs Android."
 keywords: "Google Maps China not working, best maps app China, Amap English, Apple Maps China, Baidu Maps English, navigation China foreigner"
+image: "/images/maps-comparison.svg"
 ---
+
+![Google Maps vs Apple Maps in China](/images/maps-comparison.svg)
 
 Google Maps loads in China, but it's wrong. Streets are offset by 500 meters. Public transit directions don't work. Walking routes send you through walls.
 

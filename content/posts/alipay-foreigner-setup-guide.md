@@ -5,7 +5,10 @@ draft: false
 tags: ["guides", "payment"]
 description: "How to set up Alipay with your foreign phone number and international credit card BEFORE landing in China. Step-by-step with screenshots."
 keywords: "Alipay foreigner setup, Alipay international credit card, China payment guide, foreigner China no Chinese bank account"
+image: "/images/alipay-setup.svg"
 ---
+
+![Alipay setup steps](/images/alipay-setup.svg)
 
 You don't need a Chinese phone number. You don't need a Chinese bank account. Here's how to set everything up before your flight.
 

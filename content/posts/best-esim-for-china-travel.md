@@ -5,7 +5,10 @@ draft: false
 tags: ["reviews", "comparison", "best-of"]
 description: "We tested 6 eSIM providers in China. Only 3 actually bypass the Great Firewall. Here's the honest comparison."
 keywords: "best eSIM for China, China eSIM review, eSIM China firewall bypass, Airalo China, Holafly China, Saily China"
+image: "/images/esim-comparison.svg"
 ---
+
+![eSIM comparison](/images/esim-comparison.svg)
 
 If you're traveling to China, you need an eSIM that does **two things**: gives you data, and lets you access Google, WhatsApp, Instagram, and Gmail.
 
