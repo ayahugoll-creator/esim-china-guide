@@ -508,6 +508,24 @@
     };
 
     var data = generateChecklist(inputs);
+
+    // Track submission
+    var source = window.location.pathname === "/" ? "homepage" : "planner-page";
+    try {
+      fetch("/api/planner-event", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          nationality: nationality,
+          concern: inputs.concern,
+          hotspot: inputs.hotspot,
+          duration: inputs.duration,
+          esim: data.esim.provider.name,
+          source: source
+        })
+      });
+    } catch (e) { /* ignore tracking errors */ }
+
     var results = document.getElementById("planner-results");
     results.innerHTML = renderResults(data);
     results.style.display = "block";
