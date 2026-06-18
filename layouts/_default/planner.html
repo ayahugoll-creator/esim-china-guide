@@ -1,0 +1,550 @@
+{{- define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+  </header>
+
+  <div class="post-content md-content">{{ .Content }}</div>
+
+  <div id="planner-app">
+    <form id="planner-form" class="planner-form">
+      <div class="form-group">
+        <label for="nationality">Your nationality</label>
+        <select id="nationality" required>
+          <option value="">-- Select --</option>
+          <optgroup label="Visa-free (15 days)">
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Brunei">Brunei</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Greece">Greece</option>
+            <option value="Iceland">Iceland</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Italy">Italy</option>
+            <option value="Japan">Japan</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Norway">Norway</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Slovenia">Slovenia</option>
+            <option value="South Korea">South Korea</option>
+            <option value="Spain">Spain</option>
+            <option value="Switzerland">Switzerland</option>
+          </optgroup>
+          <optgroup label="Visa-free (30 days)">
+            <option value="Singapore">Singapore</option>
+          </optgroup>
+          <optgroup label="Visa required (L tourist visa)">
+            <option value="Brazil">Brazil</option>
+            <option value="Canada">Canada</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Russia">Russia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Thailand">Thailand</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="Vietnam">Vietnam</option>
+          </optgroup>
+          <option value="OTHER">Other / Not listed</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="arrival-date">Arrival date</label>
+          <input type="date" id="arrival-date" required>
+        </div>
+        <div class="form-group">
+          <label for="duration">How many days in China?</label>
+          <select id="duration" required>
+            <option value="">-- Select --</option>
+            <option value="3">1-3 days</option>
+            <option value="7">4-7 days</option>
+            <option value="15">8-15 days</option>
+            <option value="30">16-30 days</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="concern">What matters most to you?</label>
+        <select id="concern" required>
+          <option value="">-- Select --</option>
+          <option value="works">I just want something that works — no hassle</option>
+          <option value="cheapest">Cheapest possible — I'll figure out the details</option>
+          <option value="unlimited">Unlimited data — I stream and video call a lot</option>
+          <option value="reliable">Most reliable connection — I need stability</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="hotspot">Will you need to share internet with a laptop or tablet?</label>
+        <select id="hotspot" required>
+          <option value="">-- Select --</option>
+          <option value="yes">Yes, I'll be working on a laptop</option>
+          <option value="no">No, phone only</option>
+        </select>
+      </div>
+
+      <button type="submit" class="planner-btn">Generate My Checklist</button>
+    </form>
+
+    <div id="planner-results" style="display:none"></div>
+  </div>
+</article>
+{{- end }}
+
+<style>
+.planner-form {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+.planner-form .form-group {
+  margin-bottom: 1.25rem;
+}
+.planner-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+.planner-form select,
+.planner-form input[type="date"] {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  appearance: auto;
+}
+.planner-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.planner-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: #f5a623;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+.planner-btn:hover {
+  background: #e09515;
+}
+
+/* Results */
+.planner-results {
+  margin-top: 2rem;
+}
+.checklist-section {
+  margin-bottom: 2rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.checklist-section h3 {
+  margin: 0;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.checklist-section h3.visa-header { background: #fff3e0; }
+.checklist-section h3.esim-header { background: #e8f5e9; }
+.checklist-section h3.prep-header { background: #e3f2fd; }
+.checklist-section ul {
+  list-style: none;
+  padding: 1rem 1.2rem;
+  margin: 0;
+}
+.checklist-section li {
+  padding: 0.45rem 0;
+  font-size: 0.93rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.5;
+}
+.checklist-section li .cb {
+  flex-shrink: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-top: 2px;
+}
+.esim-recommendation {
+  padding: 0.5rem 1.2rem 1rem;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+.esim-recommendation strong {
+  color: #333;
+}
+.esim-recommendation a {
+  color: #f5a623;
+  font-weight: 600;
+}
+.visa-warning {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 1rem 1.2rem;
+  margin: 1rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.88rem;
+}
+.checklist-footer {
+  font-size: 0.82rem;
+  color: #999;
+  padding: 1rem 1.2rem 0;
+  border-top: 1px solid #eee;
+  margin: 0 1.2rem 1rem;
+}
+.share-btns {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.share-btns button {
+  padding: 0.5rem 1rem;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.share-btns button:hover {
+  background: #f5f5f5;
+}
+
+@media (max-width: 600px) {
+  .planner-form { padding: 1.2rem; }
+  .planner-form .form-row { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+(function() {
+  const VISA_FREE_15 = new Set([
+    "Australia","Austria","Belgium","Brunei","Denmark","Finland","France",
+    "Germany","Greece","Iceland","Ireland","Italy","Japan","Luxembourg",
+    "Malaysia","Netherlands","New Zealand","Norway","Poland","Portugal",
+    "Slovakia","Slovenia","South Korea","Spain","Switzerland"
+  ]);
+  const VISA_FREE_30 = new Set(["Singapore"]);
+
+  // eSIM data
+  const ESIM = {
+    saily: {
+      name: "Saily",
+      url: "https://saily.tpo.lv/Hpfpc3b9",
+      plans: [
+        { gb: 1, days: 7, price: "$4.49" },
+        { gb: 5, days: 15, price: "$12.99" },
+        { gb: 10, days: 30, price: "$22.99" }
+      ],
+      bypass: true, hotspot: true, fiveG: true,
+      desc: "Built-in firewall bypass. Works instantly on landing."
+    },
+    airalo: {
+      name: "Airalo",
+      url: "https://airalo.tpo.lv/k3vUkRq2",
+      plans: [
+        { gb: 1, days: 3, price: "$4.00" },
+        { gb: 5, days: 15, price: "$8.00" },
+        { gb: 10, days: 30, price: "$18.00" }
+      ],
+      bypass: false, hotspot: true, fiveG: true,
+      desc: "Cheapest base prices. Requires separate VPN for Google/WhatsApp."
+    },
+    holafly: {
+      name: "Holafly",
+      url: "https://esim.holafly.com/affiliate?utm_source=esimchina",
+      plans: [
+        { gb: "Unlimited", days: 3, price: "~$11.70" },
+        { gb: "Unlimited", days: 7, price: "~$27.30" },
+        { gb: "Unlimited", days: 15, price: "~$50.90" }
+      ],
+      bypass: true, hotspot: "1GB/day cap", fiveG: true,
+      desc: "Actually unlimited data. Hotspot capped at 1GB/day."
+    },
+    ubigi: {
+      name: "Ubigi",
+      url: "https://www.ubigi.com/",
+      plans: [
+        { gb: 5, days: 15, price: "$12.00" },
+        { gb: 10, days: 30, price: "$19.00" }
+      ],
+      bypass: true, hotspot: true, fiveG: "mostly 4G",
+      desc: "Most stable connection (China Telecom). Mostly 4G speeds."
+    }
+  };
+
+  function getVisaInfo(nationality) {
+    if (VISA_FREE_30.has(nationality)) return { type: "free30", days: 30 };
+    if (VISA_FREE_15.has(nationality)) return { type: "free15", days: 15 };
+    return { type: "required", days: null };
+  }
+
+  function pickPlan(provider, targetDays) {
+    var plans = provider.plans;
+    var best = plans[0];
+    for (var i = 0; i < plans.length; i++) {
+      if (plans[i].days >= targetDays) { best = plans[i]; break; }
+      if (plans[i].days > best.days) best = plans[i];
+    }
+    return best;
+  }
+
+  function getESim(concern, needsHotspot, days) {
+    if (concern === "cheapest") {
+      return { provider: ESIM.airalo, reason: "Cheapest option.", needsVpn: true };
+    }
+    if (concern === "unlimited") {
+      if (needsHotspot) {
+        return {
+          provider: ESIM.saily,
+          reason: "You need hotspot sharing. Holafly caps hotspot at 1GB/day, so Saily is the best fit.",
+          needsVpn: false,
+          overridden: "Holafly would be unlimited, but its hotspot cap doesn't work for you."
+        };
+      }
+      return { provider: ESIM.holafly, reason: "Truly unlimited data, no throttle.", needsVpn: false };
+    }
+    if (concern === "reliable") {
+      return { provider: ESIM.ubigi, reason: "Most stable connection via China Telecom partnership.", needsVpn: false };
+    }
+    // Default: "just works"
+    return { provider: ESIM.saily, reason: "Built-in firewall bypass. Install and forget.", needsVpn: false };
+  }
+
+  function formatDate(d) {
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return months[d.getMonth()] + " " + d.getDate();
+  }
+
+  function addDays(d, n) {
+    var r = new Date(d);
+    r.setDate(r.getDate() + n);
+    return r;
+  }
+
+  function diffDays(a, b) {
+    return Math.round((a - b) / (1000 * 60 * 60 * 24));
+  }
+
+  function generateChecklist(inputs) {
+    var nationality = inputs.nationality;
+    var arrival = new Date(inputs.arrivalDate + "T00:00:00");
+    var days = parseInt(inputs.duration);
+    var concern = inputs.concern;
+    var needsHotspot = inputs.hotspot === "yes";
+
+    var visa = getVisaInfo(nationality);
+    var esim = getESim(concern, needsHotspot, days);
+    var plan = pickPlan(esim.provider, days);
+
+    var items = { visa: [], prep: [] };
+    var today = new Date();
+    today.setHours(0,0,0,0);
+
+    // Visa section
+    if (visa.type === "free15" || visa.type === "free30") {
+      var startDate = addDays(arrival, -7);
+      items.visa.push({
+        date: formatDate(startDate),
+        text: "Confirm your passport is valid for at least 6 months beyond your arrival date."
+      });
+      items.visa.push({
+        date: "Before flying",
+        text: "No visa needed for " + nationality + " citizens — you get " + visa.days + " days visa-free. Have your return/onward ticket ready to show at immigration."
+      });
+    } else {
+      var applyDate = addDays(arrival, -35);
+      items.visa.push({
+        date: formatDate(applyDate),
+        text: "Fill out the COVA visa application form online and gather: passport, passport photo, flight itinerary, hotel bookings, travel itinerary."
+      });
+      items.visa.push({
+        date: formatDate(addDays(arrival, -28)),
+        text: "Visit your nearest Chinese embassy/consulate or visa center. Standard processing: 4-10 business days."
+      });
+      items.visa.push({
+        date: formatDate(addDays(arrival, -14)),
+        text: "You should have your visa by now. If not, contact the visa center."
+      });
+      items.visa.push({
+        date: "Before flying",
+        text: "Double-check: passport validity > 6 months + at least 2 blank visa pages."
+      });
+    }
+
+    // Transit tip for visa-required countries
+    if (visa.type === "required") {
+      items.visa.push({
+        date: "Alternative",
+        text: "If you're transiting through China to a third country (e.g. US → Beijing → Japan), you may qualify for 144-hour transit visa-free. You must have an onward ticket to a DIFFERENT country and stay within allowed cities. Verify at your local embassy — this is not legal advice."
+      });
+    }
+
+    // Prep items — build timeline
+    var prepMap = [
+      { offset: -7, text: "Install eSIM: <strong>" + esim.provider.name + "</strong> — do this before departure while Google Play / App Store work normally." },
+      { offset: -7, text: "Set up Alipay: download app, register with your phone number, verify identity with passport, link your Visa/Mastercard. <a href='/posts/alipay-foreigner-setup-guide/' target=_blank>Full guide →</a>" },
+      { offset: -5, text: "Download offline maps: Apple Maps works in China but download offline anyway. Android users: install 高德地图 (Amap) and download city packs before you fly." },
+      { offset: -3, text: "Screenshot your hotel name and address <strong>in Chinese characters</strong>. Save to your photo gallery. Show this to taxi drivers." },
+      { offset: -3, text: "Test your Alipay: ask a friend to send you ¥0.01 to confirm payments work." }
+    ];
+
+    // VPN for laptop
+    if (needsHotspot) {
+      prepMap.push({
+        offset: -5,
+        text: "Buy and install a VPN for your laptop before departure: <strong>LetsVPN</strong> or <strong>Astrill</strong>. ⚠️ Do NOT wait until you arrive — VPN websites are blocked in China. Your phone eSIM handles firewall bypass; this VPN is for your laptop only."
+      });
+    } else if (esim.needsVpn) {
+      prepMap.push({
+        offset: -5,
+        text: "Buy and install a VPN for your phone <strong>before departure</strong>: Airalo routes through local networks so Google/WhatsApp are blocked. Try <strong>LetsVPN</strong> or <strong>Astrill</strong>. Install before you fly — VPN sites are blocked in China."
+      });
+    }
+
+    prepMap.push({ offset: -2, text: "Save digital copies of: passport, visa, travel insurance, flight + hotel confirmations. Email them to yourself, too." });
+    prepMap.push({ offset: -1, text: "Withdraw ¥300-500 cash OR confirm your debit card works for overseas ATM withdrawal. At the airport, use a Bank of China or ICBC ATM — better exchange rate than currency exchange counters. If you already have large bills (¥100), buy a bottle of water at the airport shop to break them — small vendors rarely have change." });
+    prepMap.push({ offset: 0, text: "<strong>Arrival day:</strong> Switch to your " + esim.provider.name + " eSIM after landing. Open Alipay and confirm it works. Use DiDi mini-app inside Alipay to call a ride to your hotel." });
+
+    // Food delivery tip
+    prepMap.push({
+      offset: 0,
+      text: "For food delivery: use <strong>Ele.me mini-app inside Alipay</strong> — no Chinese phone number needed. <a href='/posts/how-to-order-food-in-china-without-chinese/' target=_blank>How to order without Chinese →</a>"
+    });
+
+    // Sort by offset, arrival day last
+    prepMap.sort(function(a, b) { return a.offset - b.offset; });
+
+    for (var i = 0; i < prepMap.length; i++) {
+      var p = prepMap[i];
+      var d = addDays(arrival, p.offset);
+      var dateLabel;
+      if (p.offset === 0) dateLabel = formatDate(d) + " (Arrival!)";
+      else if (p.offset < 0) dateLabel = formatDate(d) + " (" + (-p.offset) + " days before)";
+      else dateLabel = formatDate(d);
+      items.prep.push({ date: dateLabel, text: p.text });
+    }
+
+    return {
+      visa: visa,
+      esim: esim,
+      plan: plan,
+      items: items,
+      inputs: inputs
+    };
+  }
+
+  function renderResults(data) {
+    var visa = data.visa;
+    var esim = data.esim;
+    var plan = data.plan;
+    var items = data.items;
+
+    var html = '<div class="planner-results">';
+
+    // eSIM recommendation first (most actionable)
+    html += '<div class="checklist-section">';
+    html += '<h3 class="esim-header">📱 Your eSIM: ' + esim.provider.name + '</h3>';
+    html += '<div class="esim-recommendation">';
+    html += '<p><strong>Why ' + esim.provider.name + ':</strong> ' + esim.reason + '</p>';
+    if (esim.overridden) {
+      html += '<p style="color:#e67e22;font-size:.88rem">⚠ ' + esim.overridden + '</p>';
+    }
+    if (esim.needsVpn) {
+      html += '<p style="color:#e74c3c;font-size:.88rem">⚠ Airalo routes through Chinese networks — Google and WhatsApp will be BLOCKED unless you also install a VPN before departure.</p>';
+    }
+    html += '<p><strong>Recommended plan:</strong> ' + plan.gb + ' GB / ' + plan.days + ' days — <strong>' + plan.price + '</strong></p>';
+    html += '<p>' + esim.provider.desc + '</p>';
+    html += '<p><a href="' + esim.provider.url + '" target=_blank rel="nofollow sponsored">Check ' + esim.provider.name + ' price →</a></p>';
+    html += '</div>';
+    html += '</div>';
+
+    // Visa section
+    html += '<div class="checklist-section">';
+    html += '<h3 class="visa-header">🛂 Visa & Entry</h3>';
+    html += '<ul>';
+    for (var i = 0; i < items.visa.length; i++) {
+      html += '<li><span class="cb"></span><span><strong>' + items.visa[i].date + ':</strong> ' + items.visa[i].text + '</span></li>';
+    }
+    html += '</ul>';
+    html += '<div class="visa-warning">⚠ <strong>Not legal advice.</strong> Visa policies change. Always verify with <a href="https://www.fmprc.gov.cn/" target=_blank>your local Chinese embassy</a> before booking flights.</div>';
+    html += '</div>';
+
+    // Preparation timeline
+    html += '<div class="checklist-section">';
+    html += '<h3 class="prep-header">📋 Your Countdown Checklist</h3>';
+    html += '<ul>';
+    for (var i = 0; i < items.prep.length; i++) {
+      html += '<li><span class="cb"></span><span><strong>' + items.prep[i].date + '</strong> — ' + items.prep[i].text + '</span></li>';
+    }
+    html += '</ul>';
+    html += '</div>';
+
+    // Footer
+    html += '<div class="checklist-footer">Generated for: ' + data.inputs.nationality + ' citizen, arriving ' + data.inputs.arrivalDate + ', ' + data.inputs.duration + ' day trip. We earn a commission on some eSIM links at no cost to you.</div>';
+
+    // Buttons
+    html += '<div class="share-btns">';
+    html += '<button onclick="window.print()">🖨 Print Checklist</button>';
+    html += '<button onclick="document.getElementById(\'planner-results\').style.display=\'none\';document.getElementById(\'planner-form\').style.display=\'block\';window.scrollTo(0,0);">↩ Start Over</button>';
+    html += '</div>';
+
+    html += '</div>';
+    return html;
+  }
+
+  // Wire up form
+  document.getElementById("planner-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    var sel = document.getElementById("nationality");
+    var nationality = sel.value === "OTHER" ? "your country" : sel.options[sel.selectedIndex].text;
+
+    var inputs = {
+      nationality: nationality,
+      arrivalDate: document.getElementById("arrival-date").value,
+      duration: document.getElementById("duration").value,
+      concern: document.getElementById("concern").value,
+      hotspot: document.getElementById("hotspot").value
+    };
+
+    var data = generateChecklist(inputs);
+    var results = document.getElementById("planner-results");
+    results.innerHTML = renderResults(data);
+    results.style.display = "block";
+    document.getElementById("planner-form").style.display = "none";
+    results.scrollIntoView({ behavior: "smooth" });
+  });
+})();
+</script>

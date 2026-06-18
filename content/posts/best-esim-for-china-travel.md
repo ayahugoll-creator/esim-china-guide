@@ -181,6 +181,7 @@ A: iPhones (XS/XR and newer), most Samsung Galaxy, Google Pixel 4+. Check your p
 ---
 
 **More China travel guides:**
+- [Free trip planner — get your personalized checklist →](/planner/)
 - [How to order food delivery without speaking Chinese](/posts/how-to-order-food-in-china-without-chinese/)
 - [Alipay setup guide for foreigners](/posts/alipay-foreigner-setup-guide/)
 - [How to pay in China — cash is dead](/posts/how-to-pay-in-china-cashless/)
