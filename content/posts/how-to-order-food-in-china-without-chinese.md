@@ -91,3 +91,10 @@ If you're staring at a Chinese-only menu, these are safe bets that almost every 
 5. **Embrace the chaos** — ordering the wrong thing by accident is a core China travel memory
 
 And if all else fails, walk into any restaurant with photos on the menu and point. It works 100% of the time.
+
+---
+
+**More guides for your China trip:**
+- [Best eSIM for China — which one actually works?](/posts/best-esim-for-china-travel/) — food delivery apps need internet
+- [Alipay setup guide for foreigners](/posts/alipay-foreigner-setup-guide/) — the app that makes food delivery possible
+- [How to pay in China (cash is dead)](/posts/how-to-pay-in-china-cashless/) — understand the cashless system

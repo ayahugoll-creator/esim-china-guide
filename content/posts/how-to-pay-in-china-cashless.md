@@ -100,3 +100,5 @@ Set up Alipay before your flight. It's a 10-minute task that saves you hours of 
 [→ Alipay setup guide](/posts/alipay-foreigner-setup-guide/)
 
 [→ Get a China eSIM before you leave](https://airalo.tpo.lv/k3vUkRq2)
+
+**Next read:** [How to order food delivery without speaking Chinese →](/posts/how-to-order-food-in-china-without-chinese/)

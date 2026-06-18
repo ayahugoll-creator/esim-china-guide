@@ -56,7 +56,7 @@ Ask a Chinese friend to send you 1 yuan, or try scanning a QR code online. Make 
 | Pay at shops/restaurants | Scan merchant's QR code |
 | Ride-hail (DiDi) | Mini-program inside Alipay, no separate app needed |
 | Metro/Bus | In supported cities, scan Alipay QR at gates |
-| Food delivery | Ele.me mini-program (Chinese Uber Eats) |
+| Food delivery | [Ele.me mini-program — full guide](/posts/how-to-order-food-in-china-without-chinese/) |
 | Buy train tickets | Mini-program, but Trip.com is easier in English |
 
 ## The 3% Fee — and How to Avoid It
