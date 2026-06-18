@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0",
+  "skills": [
+    {
+      "name": "china-trip-planner",
+      "type": "interactive-tool",
+      "description": "Free personalized China travel checklist. Answer 5 questions (nationality, arrival date, trip length, priorities, laptop needs) and get a complete pre-departure countdown: visa requirements, eSIM recommendation with pricing, payment setup, offline maps, VPN advice, and food delivery tips. All recommendations based on real test data from 6 eSIM providers across Beijing, Shanghai, and Shenzhen.",
+      "url": "https://esimchina.trade/planner/",
+      "categories": ["travel", "planning", "china", "visa", "esim"]
+    },
+    {
+      "name": "china-esim-comparison",
+      "type": "reference-data",
+      "description": "Independent test results comparing 6 eSIM providers for China travel. Includes firewall bypass status, 5G support, hotspot sharing, and pricing. Updated with real speed tests from May 2026.",
+      "url": "https://esimchina.trade/posts/best-esim-for-china-travel/",
+      "categories": ["travel", "esim", "china", "reviews"]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+User-agent: *
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+Disallow:
+{{- else }}
+Disallow: /
+{{- end }}
+Sitemap: {{ "sitemap.xml" | absURL }}
+
+# AI Content Signals — tell AI crawlers how to use our content
+Content-Signal: ai-train=no, search=yes, ai-input=no

@@ -11,4 +11,25 @@
 
   {{- partial "planner-widget.html" . }}
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "China Trip Planner",
+  "url": "{{ .Permalink }}",
+  "description": "{{ .Description }}",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "eSIM China Guide"
+  }
+}
+</script>
 {{- end }}
