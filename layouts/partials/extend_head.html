@@ -17,54 +17,23 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6398571509422161" crossorigin="anonymous"></script>
 {{- end }}
 
-<!-- Enhanced Structured Data -->
-{{- if .IsPage }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "{{ .Title }}",
-  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}",
-  "datePublished": "{{ .Date.Format "2006-01-02" }}",
-  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
-  "author": {
-    "@type": "Organization",
-    "name": "eSIM China Guide"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "eSIM China Guide",
-    "url": "{{ site.BaseURL }}"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ .Permalink }}"
-  }
-  {{- with .Params.image }}
-  ,"image": "{{ . | absURL }}"
-  {{- end }}
-}
-</script>
-{{- end }}
-
-{{- /* FAQ Schema for guide/FAQ pages */}}
-{{- if and .IsPage (or (in .Params.tags "FAQ") (in .Params.tags "guides")) }}
-{{- if or (in .RawContent "**Q:**") (in .RawContent "**Q：**") }}
+{{- /* FAQ Schema for pages with Q&A content */}}
+{{- if and .IsPage (or (in .RawContent "**Q:") (in .RawContent "**Q：")) }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {{- $questions := findRE "(?s)\\*\\*Q[：:].*?\\n" .RawContent }}
-    {{- $answers := findRE "(?s)\\*\\*A[：:].*?\\n\\n" .RawContent }}
+    {{- $answers := findRE "(?s)A[：:].*?\\n\\n" .RawContent }}
     {{- $count := len $questions }}
     {{- range $i, $q := $questions }}
     {
       "@type": "Question",
-      "name": "{{ replaceRE "\\*\\*Q[：:]\\s*" "" $q | plainify | trim }}",
+      "name": "{{ replaceRE "\\*\\*Q[：:]\\s*" "" $q | plainify }}",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ if lt $i $count }}{{ index $answers $i | replaceRE "\\*\\*A[：:]\\s*" "" | plainify | trim }}{{ end }}"
+        "text": "{{ if lt $i $count }}{{ index $answers $i | replaceRE "^A[：:]\\s*" "" | plainify }}{{ end }}"
       }
     }{{ if lt $i (sub $count 1) }},{{ end }}
     {{- end }}
@@ -72,16 +41,13 @@
 }
 </script>
 {{- end }}
-{{- end }}
 
-<!-- Open Graph Image -->
-{{- if .IsPage }}
-{{- with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
+<!-- Open Graph Image fallback -->
+{{- if .IsHome }}
+<meta property="og:image" content="{{ "images/og-default.svg" | absURL }}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ . | absURL }}">
-{{- else }}
-<meta property="og:image" content="{{ "images/og-default.png" | absURL }}">
-{{- end }}
+<meta name="twitter:image" content="{{ "images/og-default.svg" | absURL }}">
+{{- else if and .IsPage (not .Params.image) }}
+<meta property="og:image" content="{{ "images/og-default.svg" | absURL }}">
 {{- end }}
 {{- end }}

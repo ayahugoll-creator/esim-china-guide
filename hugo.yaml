@@ -2,6 +2,7 @@ baseURL: "https://esimchina.trade/"
 locale: "en-us"
 title: "eSIM China Guide — Honest Reviews for Foreign Travelers"
 theme: "PaperMod"
+enableRobotsTXT: true
 
 params:
   author: "eSIM China Guide"
