@@ -14,6 +14,45 @@ If you're traveling to China, you need an eSIM that does **two things**: gives y
 
 Not all "China eSIMs" do both. We bought and tested 6 of them. Here's what works and what doesn't.
 
+<style>
+  .quick-picks { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin:1.5rem 0; }
+  .pick-card { border:1.5px solid #e0e0e0; border-radius:12px; padding:1.2rem; text-align:center; background:#fafafa; }
+  .pick-card.best { border-color:#f5a623; background:#fff8f0; }
+  .pick-card h4 { margin:0 0 .5rem; font-size:1.05rem; }
+  .pick-card .price { font-size:1.4rem; font-weight:700; color:#333; margin:.3rem 0; }
+  .pick-card .tagline { font-size:.85rem; color:#666; margin-bottom:.8rem; }
+  .pick-card .btn { display:inline-block; padding:.6rem 1.5rem; border-radius:8px; font-weight:600; font-size:.9rem; text-decoration:none; transition:all .2s; }
+  .btn-primary { background:#f5a623; color:#fff; }
+  .btn-primary:hover { background:#e09515; }
+  .btn-secondary { background:#333; color:#fff; }
+  .btn-secondary:hover { background:#555; }
+  .pick-card .disclaimer { font-size:.7rem; color:#999; margin-top:.5rem; }
+</style>
+
+<div class="quick-picks">
+<div class="pick-card best">
+  <h4>🥇 Best Overall</h4>
+  <div class="price">From $4.49</div>
+  <div class="tagline">Built-in firewall bypass. Works instantly.</div>
+  <a href="https://saily.tpo.lv/Hpfpc3b9" class="btn btn-primary">Check Saily Price →</a>
+  <div class="disclaimer">5GB / 15 days = $12.99</div>
+</div>
+<div class="pick-card">
+  <h4>🥈 Best Budget</h4>
+  <div class="price">From $4.00</div>
+  <div class="tagline">Cheapest base plan. Need a VPN.</div>
+  <a href="https://airalo.tpo.lv/k3vUkRq2" class="btn btn-secondary">Check Airalo Price →</a>
+  <div class="disclaimer">1GB / 3 days = $4.00</div>
+</div>
+<div class="pick-card">
+  <h4>🥉 Best Unlimited</h4>
+  <div class="price">~$3.90/day</div>
+  <div class="tagline">Actually unlimited. No throttle.</div>
+  <a href="https://esim.holafly.com/affiliate?utm_source=esimchina" class="btn btn-secondary">Check Holafly Price →</a>
+  <div class="disclaimer">15 days unlimited ~$50.90</div>
+</div>
+</div>
+
 ## The Short Answer
 
 **Best overall:** Saily — fast, reliable, built-in firewall bypass, from $4.49.
