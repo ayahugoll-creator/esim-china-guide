@@ -12,7 +12,7 @@
 </script>
 
 <!-- Google AdSense (only on info pages, not money pages) -->
-{{- $isMoneyPage := or (eq .RelPermalink "/posts/best-esim-for-china-travel/") (eq .RelPermalink "/about/") }}
+{{- $isMoneyPage := or (eq .RelPermalink "/posts/best-esim-for-china-travel/") (eq .RelPermalink "/about/") (eq .RelPermalink "/planner/") }}
 {{- if not $isMoneyPage }}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6398571509422161" crossorigin="anonymous"></script>
 {{- end }}
