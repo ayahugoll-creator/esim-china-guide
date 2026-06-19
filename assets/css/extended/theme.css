@@ -473,6 +473,19 @@ footer a {
 }
 .cta-esim h2 { color: #fff; margin-top: 0; font-size: 1.3rem; }
 .cta-esim p { opacity: 0.9; font-size: 0.95rem; }
+
+.cta-planner {
+    background: linear-gradient(135deg, #f5a623, #f0986c);
+    color: #fff;
+    padding: 24px 28px;
+    border-radius: 14px;
+    margin-top: 28px;
+}
+.cta-planner h2 { color: #fff; margin-top: 0; font-size: 1.3rem; }
+.cta-planner p { opacity: 0.9; font-size: 0.95rem; }
+.cta-btn--planner { background: #fff; color: #e8782a; }
+.cta-btn--planner:hover { background: #fff5eb; }
+
 .cta-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
 
 .cta-btn {
